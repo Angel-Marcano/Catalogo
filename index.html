@@ -9,13 +9,58 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
 
-    
+<style>
+  .item{
+    margin-top:15px;
+  }
+</style>    
 <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
 <script src="https://unpkg.com/vuex@4.0.2/dist/vuex.global.js"></script>
 
     <title>Catalogo</title>
 </head>
 <body>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="modalBtn"  style="display:none;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+   modal
+</button>
+
+<!-- Modal modal-dialog modal-dialog-scrollable-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Términos y condiciones</h5>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li>Los productos presentados a continuación serán entregados completamente nuevos (A menos que se indiqué lo contrario).</li>
+          <li class="item">Los productos serán entregados al completarse completamente el pago correspondiente.</li>
+          <li class="item">El lapso de pago será correspondiente al monto a pagar:
+            <ul>
+              <li>Hasta 9$ -> 60 Días.</li>
+              <li>10$ a 14,99$ -> 90 Días.</li>
+              <li>15$ a 19,99$ -> 120 Días.</li>
+              <li>20$ a 24,99$ -> 150 Días.</li>
+              <li>25$ a 30$ -> 180 Días.</li>
+            </ul>
+          </li>
+          <li class="item">Los pagos realizados <stron>NO</stron> tendrán devolución monetaria (transferencia, efectivo o pago movil).</li>
+          <li class="item">En caso de tener deseo de no continuar con el producto inicial, podrá cambiar a otro producto y el o los pagos realizados serán tomados en cuenta.</li>
+        </ol>
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Acepto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
     <div id="app" >
       <header>
@@ -443,6 +488,9 @@
                   }
         });
 
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('modalBtn').click();
+        });
     </script>
     
 </body>
